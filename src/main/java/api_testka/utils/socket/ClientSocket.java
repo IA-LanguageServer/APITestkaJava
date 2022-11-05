@@ -30,6 +30,7 @@ public class ClientSocket extends Thread {
     public String sendData(String stringToPrint) {
         boolean retry = true;
         int retryCount = 5;
+        StringBuffer stringBuffer = new StringBuffer();
         while (retry && retryCount >= 0) {
             try {
                 this.sendCommandSocket = new Socket(this.host, this.port);
@@ -42,11 +43,13 @@ public class ClientSocket extends Thread {
                     String readData = bufferedReader.readLine();
                     if (readData != null && !readData.equals("")) {
                         while (!readData.equals("Return_Data_Over_JE")) {
+                            stringBuffer.append(readData);
+                            System.out.flush();
                             readData = bufferedReader.readLine();
                         }
                     }
                     bufferedReader.close();
-                    this.sendCommandSocket.close();
+                    this.closeClient();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -54,7 +57,7 @@ public class ClientSocket extends Thread {
                 retryCount -= 1;
             }
         }
-        return "";
+        return stringBuffer.toString();
     }
 }
 

@@ -28,7 +28,7 @@ public class DriverManager {
                 break;
             case "linux":
                 if (this.driverPath == null)
-                    this.driverPath = Path.of("").toAbsolutePath() + "/generate_apitestka_driver_liinux";
+                    this.driverPath = Path.of("").toAbsolutePath() + "/generate_apitestka_driver_linux";
                 break;
             case "macos":
                 if (driverPath == null)

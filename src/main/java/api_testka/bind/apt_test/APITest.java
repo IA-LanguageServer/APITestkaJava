@@ -50,7 +50,6 @@ public class APITest {
         StringBuffer testApiMethodBuilder = new StringBuffer();
         testApiMethodBuilder.append(String.format("[[\"test_api_method\", {\"http_method\": \"%s\",", httpMethod));
         testApiMethodBuilder.append(String.format("\"test_url\": \"%s\",", testUrl));
-        testApiMethodBuilder.append("\"result_check_dict\": {");
         makeResultDict(testApiMethodBuilder, resultCheckDict);
         testApiMethodBuilder.deleteCharAt(testApiMethodBuilder.lastIndexOf(","));
         testApiMethodBuilder.append("}}").append("}]]");

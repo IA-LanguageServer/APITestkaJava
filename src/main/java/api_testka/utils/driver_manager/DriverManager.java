@@ -24,7 +24,7 @@ public class DriverManager {
         switch (platform) {
             case "windows":
                 if (this.driverPath == null)
-                    this.driverPath = Path.of("").toAbsolutePath() + "/generate_apitestka_driver_win64.exe";
+                    this.driverPath = Path.of("").toAbsolutePath() + "/generate_apitestka_driver_win.exe";
                 break;
             case "linux":
                 if (this.driverPath == null)

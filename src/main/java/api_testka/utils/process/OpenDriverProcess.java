@@ -14,24 +14,21 @@ public class OpenDriverProcess extends Thread {
     private Process process;
     // use to create process
     private List<String> processCommandList;
-
+    /**
+     * class init with driver path
+     * @param driverPath which driver we want to use (full path)
+     */
     public OpenDriverProcess(String driverPath) {
         this.driverPath = driverPath;
         this.setDaemon(true);
     }
-
+    /**
+     * @param processCommandList: open process use command
+     */
     public OpenDriverProcess(List<String> processCommandList) {
         this.driverPath = processCommandList.get(0);
         this.processCommandList = processCommandList;
         this.setDaemon(true);
-    }
-
-    public void setDriverPath(String driverPath) {
-        this.driverPath = driverPath;
-    }
-
-    public String getDriverPath() {
-        return this.driverPath;
     }
 
     public void close() {
@@ -39,7 +36,9 @@ public class OpenDriverProcess extends Thread {
             process.destroy();
         }
     }
-
+    /**
+     * start process with command or no command
+     */
     @Override
     public void run() {
         super.run();

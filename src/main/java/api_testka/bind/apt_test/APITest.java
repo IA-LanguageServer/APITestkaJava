@@ -89,7 +89,7 @@ public class APITest {
     /**
      *
      * @param httpMethod: http method [GET, HEAD, POST, PUT, DELETE, PATCH, OPTIONS]
-     * @param testUrl: http or soap url we want to test
+     * @param testUrl:  http or https or soap url we want to test it
      * @param soap: is this soap test?
      * @return server response
      */

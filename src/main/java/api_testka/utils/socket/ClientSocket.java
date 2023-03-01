@@ -22,7 +22,6 @@ public class ClientSocket extends Thread {
         this.port = port;
         this.setDaemon(true);
     }
-
     /**
      * @throws IOException: If we can't close socket
      */
@@ -32,7 +31,6 @@ public class ClientSocket extends Thread {
         if (printWriter != null)
             printWriter.close();
     }
-
     /**
      * @param stringToPrint: socket will output this string use output stream
      * @return all server response as string
